@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            font-size: 16px;
+            font-family: "Roboto Thin", sans-serif;
+        }
+
+        p, div, li {
+            font-size: 1.5em;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .results {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<h1>Poker Hand Comparison</h1>
+<p>
+    Poker Hand Comparison is a little program that will compare two hands of poker
+    according to the rules of
+    <a href="https://en.wikipedia.org/wiki/Texas_hold_%27em#Hand_values">Texas Hold'em poker</a>
+</p>
+
+<ul>
+    <li class="results">RESULTS</li>
+    <li>1 is a Win</li>
+    <li>2 is a Loss</li>
+    <li>3 is a Tie</li>
+</ul>
+<div id="app"></div>
+<script src="pokerhand.js"></script>
+<script>
+    const hand1 = new PokerHand("TS JS QS KS AS");
+    const hand2 = new PokerHand("4S 5S 8C AS AD");
+    document.getElementById("app").innerHTML += `<div> ${hand1.hand} <em>against</em> ${hand2.hand} <em>results with:<em></em>  ${hand1.compareWith(hand2)}</div>`
+
+</script>
+</body>
+</html>
